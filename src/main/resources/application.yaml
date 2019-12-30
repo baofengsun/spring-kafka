@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: fab-mailer
+  mail:
+    host: smtp.126.com
+    username: sunwstorm@126.com
+    password: just4you #not the password for login web page, the password applied for smtp
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092 #if not work, set to 127.0.0.1:9092
+#          autoAddPartitions: true
+      bindings:
+        applicants-in: # the input name defind in Java code 
+          destination: test #topic name created in kafka
+          contentType: application/json
+        applicants-out: # the output name defind in Java code 
+          destination: test
+          contentType: application/json
