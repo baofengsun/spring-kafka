@@ -119,6 +119,8 @@ advertised.listeners=PLAINTEXT://localhost:9092
 
 
 
+遇见得问题：
 
+当kafka不能正常启动， spring连不上的时候， 控制台没有错误， 但是会导致所有的API无法访问， 报404
 
 
